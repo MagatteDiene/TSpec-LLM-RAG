@@ -157,3 +157,4 @@ The backend is deployed on **Hugging Face Spaces** using a Docker environment th
 
 
 https://magattediene-tspec-llm-backend.hf.space
+https://tspec-llm-rag.vercel.app

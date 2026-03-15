@@ -1,0 +1,20 @@
+# Root
+.vscode/
+.idea/
+*.log
+
+# Backend
+backend/.env
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/dataset_local/
+backend/*.db
+backend/chroma_db/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.env.production
+

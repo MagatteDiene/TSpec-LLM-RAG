@@ -17,29 +17,29 @@ const SourceList = ({ filePath, sources, index }) => {
                 onClick={() => setIsOpen(!isOpen)}
                 className="w-full flex items-center justify-between px-4 py-3 bg-white/[0.02] hover:bg-white/[0.05] transition-colors focus:outline-none"
             >
-                <div className="flex items-center gap-3 text-sm text-brand-text font-medium text-left">
-                    <div className="p-1.5 rounded-lg bg-black/40 text-brand-lime/80 border border-white/5 shadow-inner shrink-0">
-                        <FileText size={14} />
+                <div className="flex items-center gap-2 sm:gap-3 text-[13px] sm:text-sm text-brand-text font-medium text-left">
+                    <div className="p-1 sm:p-1.5 rounded-lg bg-black/40 text-brand-lime/80 border border-white/5 shadow-inner shrink-0">
+                        <FileText size={12} sm:size={14} />
                     </div>
-                    <span className="opacity-90 max-w-[200px] truncate" title={fileName}>
+                    <span className="opacity-90 max-w-[120px] sm:max-w-[200px] truncate" title={fileName}>
                         {fileName}
                     </span>
 
                     {/* Badge count to show how many chunks from this file */}
                     {sources.length > 1 && (
-                        <span className="text-[10px] font-bold px-1.5 py-0.5 bg-white/10 text-brand-muted rounded-md shrink-0">
-                            {sources.length} parties
+                        <span className="text-[9px] sm:text-[10px] font-bold px-1.5 py-0.5 bg-white/10 text-brand-muted rounded-md shrink-0">
+                            {sources.length} <span className="hidden xs:inline">parties</span>
                         </span>
                     )}
 
                     {releaseVersion && (
-                        <span className="text-[10px] font-bold px-2 py-0.5 bg-brand-lime/10 text-brand-lime border border-brand-lime/20 rounded-md tracking-wider shrink-0 hidden sm:inline-block">
+                        <span className="text-[9px] sm:text-[10px] font-bold px-2 py-0.5 bg-brand-lime/10 text-brand-lime border border-brand-lime/20 rounded-md tracking-wider shrink-0 hidden xs:inline-block">
                             {releaseVersion}
                         </span>
                     )}
                 </div>
-                <div className="flex border border-white/10 rounded-full p-1 bg-black/20 shrink-0 ml-2">
-                    {isOpen ? <ChevronDown size={14} className="text-brand-lime" /> : <ChevronRight size={14} className="text-brand-muted" />}
+                <div className="flex border border-white/10 rounded-full p-0.5 sm:p-1 bg-black/20 shrink-0 ml-1 sm:ml-2">
+                    {isOpen ? <ChevronDown size={12} sm:size={14} className="text-brand-lime" /> : <ChevronRight size={12} sm:size={14} className="text-brand-muted" />}
                 </div>
             </button>
 

@@ -7,12 +7,12 @@
 
 ---
 
-## 🇫🇷 Version Française
+## Version Française
 
-### 📝 Description
+### Description
 Un système complet de **Génération Augmentée par la Recherche (RAG)** conçu pour répondre aux questions techniques sur les spécifications télécom 3GPP (3G/4G/5G). Le projet utilise le jeu de données spécialisé `TSpec-LLM` pour garantir des réponses précises et sourcées.
 
-### 🛠️ Stack Technique
+### Stack Technique
 - **Backend** : Python + FastAPI + Uvicorn
 - **Orchestration RAG** : LangChain (Pipeline LCEL)
 - **Embeddings** : `sentence-transformers` (`all-MiniLM-L6-v2`)
@@ -21,7 +21,7 @@ Un système complet de **Génération Augmentée par la Recherche (RAG)** conçu
 - **Dataset** : HuggingFace `rasoul-nikbakht/TSpec-LLM`
 - **Frontend** : React JS + Vite + Tailwind CSS
 
-### 🏗️ Architecture (V2 MVC)
+### Architecture (V2 MVC)
 
 #### Backend
 - `app/api/routes/chat.py` : Endpoint principal `POST /api/v1/chat/ask`
@@ -42,7 +42,7 @@ Un système complet de **Génération Augmentée par la Recherche (RAG)** conçu
 - `src/components/chat/AIBrain.jsx` : Cerveau SVG animé interactif
 - `src/components/chat/AnimatedBackground.jsx` : Arrière-plan "Digital Rain"
 
-### 🔄 Flux RAG
+### Flux RAG
 1. L'utilisateur pose une question via l'interface React.
 2. Le frontend appelle l'API FastAPI.
 3. Le backend vectorise la question avec `SentenceTransformer`.
@@ -51,7 +51,7 @@ Un système complet de **Génération Augmentée par la Recherche (RAG)** conçu
 6. Llama 3.1 8B (via Groq) génère une réponse experte en français.
 7. La réponse est renvoyée avec les sources au frontend pour affichage.
 
-### 💻 Installation Locale
+### Installation Locale
 
 #### Prérequis
 - Python 3.10+
@@ -85,7 +85,7 @@ python scripts/ingest.py
 **Backend:** `uvicorn app.main:app --reload`
 **Frontend:** `cd frontend && npm install && npm run dev`
 
-### 🚀 Déploiement
+### Déploiement
 
 #### Backend — Hugging Face Spaces (Docker)
 - **Plateforme** : [Hugging Face Spaces](https://huggingface.co/spaces)
@@ -97,12 +97,12 @@ python scripts/ingest.py
 
 ---
 
-## 🇺🇸 English Version
+## English Version
 
-### 📝 Description
+### Description
 A comprehensive **Retrieval-Augmented Generation (RAG)** system designed to answer technical questions about 3GPP telecom specifications (3G/4G/5G). The project leverages the `TSpec-LLM` dataset to provide accurate and sourced answers.
 
-### 🛠️ Tech Stack
+### Tech Stack
 - **Backend**: Python + FastAPI + Uvicorn
 - **RAG Orchestration**: LangChain (LCEL Pipeline)
 - **Embeddings**: `sentence-transformers` (`all-MiniLM-L6-v2`)
@@ -111,7 +111,7 @@ A comprehensive **Retrieval-Augmented Generation (RAG)** system designed to answ
 - **Dataset**: HuggingFace `rasoul-nikbakht/TSpec-LLM`
 - **Frontend**: React JS + Vite + Tailwind CSS
 
-### 🏗️ Architecture (V2 MVC)
+### Architecture (V2 MVC)
 
 #### Backend
 - `app/api/routes/chat.py`: Main endpoint `POST /api/v1/chat/ask`
@@ -131,7 +131,7 @@ A comprehensive **Retrieval-Augmented Generation (RAG)** system designed to answ
 - `src/components/chat/AIBrain.jsx`: Animated interactive SVG brain
 - `src/components/chat/AnimatedBackground.jsx`: "Digital Rain" background
 
-### 🔄 RAG Flow
+### RAG Flow
 1. User submits a question through the React UI.
 2. React calls the FastAPI backend.
 3. Question is encoded into a vector using `SentenceTransformer`.
@@ -140,15 +140,15 @@ A comprehensive **Retrieval-Augmented Generation (RAG)** system designed to answ
 6. Llama 3.1 8B (Groq) generates a technical response.
 7. Final answer + sources are returned to the frontend.
 
-### 💻 Local Installation
+### Local Installation
 
 #### Setup
 Follow the same steps as the French version to install dependencies and configure your `.env` file. Ensure `scripts/ingest.py` is executed to build your local vector index.
 
-### 🚀 Deployment
-The backend is deployed on **Hugging Face Spaces** using a Docker environment that dynamically pulls the ChromaDB index from a Hugging Face Dataset at runtime via `start.sh`. The frontend is hosted on **Vercel**.
+### Deployment
+The backend is deployed on **Hugging Face Spaces** using a Docker environment that dynamically pulls the ChromaDB index from a Hugging Face Dataset at runtime via `start.sh`. The frontend is hosted on **Vercel`.
 
-### 🔍 Example Questions
+### Example Questions
 - "What is the difference between 4G LTE and 5G NR?"
 - "Explain the HARQ mechanism in LTE"
 - "What is beamforming in 5G?"

@@ -32,22 +32,22 @@ const ChatBubble = ({ text, isBot }) => {
     }, [text, isBot]);
 
     return (
-        <div className={`flex w-full gap-4 ${isBot ? 'flex-row' : 'flex-row-reverse'} group`}>
+        <div className={`flex w-full gap-2 sm:gap-4 ${isBot ? 'flex-row' : 'flex-row-reverse'} group`}>
             {/* Avatar Glassmorphism minimaliste */}
-            <div className={`flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-105 mt-2 ${isBot
+            <div className={`flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-105 mt-1 sm:mt-2 ${isBot
                 ? 'glass-panel text-brand-lime border-brand-lime/30'
                 : 'bg-gradient-to-br from-brand-lime to-brand-lime-hover text-[#101115] shadow-[0_0_15px_rgba(212,255,58,0.2)]'
                 }`}>
                 {isBot ? (
-                    <Bot size={18} strokeWidth={2.5} />
+                    <Bot size={16} sm:size={18} strokeWidth={2.5} />
                 ) : (
-                    <User size={18} strokeWidth={2.5} />
+                    <User size={16} sm:size={18} strokeWidth={2.5} />
                 )}
             </div>
 
-            <div className={`flex flex-col max-w-[85%] ${isBot ? 'items-start' : 'items-end'}`}>
+            <div className={`flex flex-col max-w-[90%] sm:max-w-[85%] ${isBot ? 'items-start' : 'items-end'}`}>
                 {/* Style des bulles glassmorphism & néon */}
-                <div className={`px-6 py-4 text-[15px] leading-relaxed relative ${isBot
+                <div className={`px-4 sm:px-6 py-3 sm:py-4 text-[14px] sm:text-[15px] leading-relaxed relative ${isBot
                     ? 'glass-panel text-brand-text rounded-2xl rounded-tl-sm'
                     : 'bg-brand-lime text-[#101115] rounded-2xl rounded-tr-sm font-medium shadow-[0_4px_20px_rgba(212,255,58,0.25)]'
                     }`}>

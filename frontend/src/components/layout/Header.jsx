@@ -14,8 +14,9 @@ const Header = () => {
                 </div>
             </div>
             <div className="flex items-center gap-3 shrink-0">
-                <div className="text-xs sm:text-sm shadow-sm text-brand-lime font-semibold px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl border border-brand-lime/20 bg-brand-lime/10 shadow-[0_0_15px_rgba(212,255,58,0.1)] hidden xs:block">
-                    3GPP Q&A
+                <div className="text-[10px] sm:text-xs md:text-sm shadow-sm text-brand-lime font-semibold px-2.5 sm:px-4 py-1 sm:py-2 rounded-xl border border-brand-lime/20 bg-brand-lime/10 shadow-[0_0_15px_rgba(212,255,58,0.1)]">
+                    <span className="xs:hidden">3GPP Q&A</span>
+                    <span className="hidden xs:inline">Système Q&A Télécom</span>
                 </div>
             </div>
         </header>

@@ -7,7 +7,13 @@
 
 ---
 
-## Version Française
+##  Live Demo
+- **Frontend** : https://tspec-llm-rag.vercel.app
+- **Backend API** : https://magattediene-tspec-llm-backend.hf.space
+- **Health Check** : https://magattediene-tspec-llm-backend.hf.space/api/v1/health
+
+[![HuggingFace](https://img.shields.io/badge/HuggingFace-Spaces-yellow?style=for-the-badge&logo=huggingface)](https://magattediene-tspec-llm-backend.hf.space)
+[![Vercel](https://img.shields.io/badge/Vercel-deployed-black?style=for-the-badge&logo=vercel)](https://tspec-llm-rag.vercel.app)
 
 ### Description
 Un système complet de **Génération Augmentée par la Recherche (RAG)** conçu pour répondre aux questions techniques sur les spécifications télécom 3GPP (3G/4G/5G). Le projet utilise le jeu de données spécialisé `TSpec-LLM` pour garantir des réponses précises et sourcées.
@@ -97,64 +103,3 @@ python scripts/ingest.py
 
 ---
 
-## English Version
-
-### Description
-A comprehensive **Retrieval-Augmented Generation (RAG)** system designed to answer technical questions about 3GPP telecom specifications (3G/4G/5G). The project leverages the `TSpec-LLM` dataset to provide accurate and sourced answers.
-
-### Tech Stack
-- **Backend**: Python + FastAPI + Uvicorn
-- **RAG Orchestration**: LangChain (LCEL Pipeline)
-- **Embeddings**: `sentence-transformers` (`all-MiniLM-L6-v2`)
-- **Vector Database**: ChromaDB (Persistent)
-- **LLM**: Groq API (`llama-3.1-8b-instant`)
-- **Dataset**: HuggingFace `rasoul-nikbakht/TSpec-LLM`
-- **Frontend**: React JS + Vite + Tailwind CSS
-
-### Architecture (V2 MVC)
-
-#### Backend
-- `app/api/routes/chat.py`: Main endpoint `POST /api/v1/chat/ask`
-- `app/api/routes/health.py`: Server health check `GET /api/v1/health`
-- `app/api/api_router.py`: Route aggregation
-- `app/core/config.py`: Pydantic settings management
-- `app/schemas/chat_schema.py`: Data models (Request/Response)
-- `app/services/rag_service.py`: Business logic (LangChain + Groq + ChromaDB)
-- `app/main.py`: FastAPI entry point
-- `scripts/ingest.py`: ETL pipeline for data indexing
-
-#### Frontend
-- `src/api/chatApi.js`: API communication
-- `src/hooks/useChat.js`: State management
-- `src/components/chat/ChatBubble.jsx`: Glassmorphism message design
-- `src/components/chat/SourceList.jsx`: Sourced extracts with neon effect
-- `src/components/chat/AIBrain.jsx`: Animated interactive SVG brain
-- `src/components/chat/AnimatedBackground.jsx`: "Digital Rain" background
-
-### RAG Flow
-1. User submits a question through the React UI.
-2. React calls the FastAPI backend.
-3. Question is encoded into a vector using `SentenceTransformer`.
-4. ChromaDB retrieves the Top 5 relevant chunks.
-5. LangChain assembles the prompt (Context + History + Question).
-6. Llama 3.1 8B (Groq) generates a technical response.
-7. Final answer + sources are returned to the frontend.
-
-### Local Installation
-
-#### Setup
-Follow the same steps as the French version to install dependencies and configure your `.env` file. Ensure `scripts/ingest.py` is executed to build your local vector index.
-
-### Deployment
-The backend is deployed on **Hugging Face Spaces** using a Docker environment that dynamically pulls the ChromaDB index from a Hugging Face Dataset at runtime via `start.sh`. The frontend is hosted on **Vercel`.
-
-### Example Questions
-- "What is the difference between 4G LTE and 5G NR?"
-- "Explain the HARQ mechanism in LTE"
-- "What is beamforming in 5G?"
-- "How does handover work in LTE networks?"
-- "What is the Service-Based Architecture (SBA) in 5G?"
-
-
-https://magattediene-tspec-llm-backend.hf.space
-https://tspec-llm-rag.vercel.app
